@@ -1,3 +1,68 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root {
+    --grid:
+        minmax(1em, 10%)
+        80%
+        minmax(1em, 10%);
+}
+
 body {
     font-family: 'Ubuntu', sans-serif;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: var(--grid);
+}
+
+.header {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu__item {
+    margin-left: 37px;
+}
+
+/* Main */
+main {
+    display: grid;
+    grid-template-columns: var(--grid);
+}
+
+main > * {
+    grid-column: 2;
+}
+
+h2::before {
+    border: 1px solid;
+}
+
+/* Footer */
+
+footer {
+    display: grid;
+    grid-template-columns: var(--grid);
+    background-color: #F7F7F7;
+}
+
+.footer {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+ul {
+    list-style-type: none;
 }
