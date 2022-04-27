@@ -5,13 +5,26 @@
 }
 :root {
     --grid:
-        minmax(1em, 10%)
-        80%
-        minmax(1em, 10%);
+        minmax(15em, 15%)
+        70%
+        minmax(15em, 15%);
+    --clr-primary: #5528FF;
+    --clr-dark: #202020;
+    --clr-light: #4F4F4F;
+    --clr-very-light: #B2B2B2;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --fw-black: 900;
 }
 
 body {
+    margin: 0;
     font-family: 'Ubuntu', sans-serif;
+    color: var(--clr-dark);
+}
+
+p {
+    margin-top: 0;
 }
 
 /* Header */
@@ -21,17 +34,34 @@ header {
 }
 
 .header {
+    padding-top: 3rem;
     grid-column: 2;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .menu {
     display: flex;
+    font-size: 0.875rem;
 }
 
 .menu__item {
-    margin-left: 37px;
+    margin-left: 2rem;
+}
+
+.menu__item > a {
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    color: var(--clr-dark);
+    line-height: 1rem;
+}
+
+.menu__item .btn--primary {
+    background-color: var(--clr-primary);
+    color: white;
+    padding: 0.25rem 0.875rem;
+    border-radius: 5px;
 }
 
 /* Main */
@@ -47,6 +77,50 @@ main > * {
 h2::before {
     border: 1px solid;
 }
+
+.content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 
+        auto
+        1fr
+        1fr
+}
+
+.content__title {
+    font-weight: var(--fw-bold);
+    font-style: normal;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    padding-top: 4rem;
+    grid-column: span 3;
+}
+
+.content__intro {
+    font-weight: var(--fw-normal);
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 3.125rem;
+    color: var(--clr-light);
+    grid-column: span 2;
+}
+
+.content .btn {
+    grid-row: 3;
+    min-width: 0;
+}
+
+.content .btn--primary {
+    text-decoration: none;
+    font-weight: var(--fw-normal);
+    font-size: 1.5rem;
+    background-color: var(--clr-primary);
+    color: white;
+
+    padding: 1rem 3.6rem;
+    border-radius: 10px;
+}
+
 
 /* Footer */
 
