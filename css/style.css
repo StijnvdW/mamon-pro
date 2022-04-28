@@ -12,6 +12,8 @@
     --clr-dark: #202020;
     --clr-light: #4F4F4F;
     --clr-very-light: #B2B2B2;
+    --clr-very-light-2: #C2C2C2;
+    --fw-light: 300;
     --fw-normal: 400;
     --fw-bold: 700;
     --fw-black: 900;
@@ -25,6 +27,14 @@ body {
 
 p {
     margin-top: 0;
+}
+
+h2 {
+    font-weight: var(--fw-light);
+    color: var(--clr-very-light-2);
+    text-transform: uppercase;
+    line-height: 1rem;
+    font-size: 0.875rem;
 }
 
 /* Header */
@@ -68,15 +78,46 @@ header {
 main {
     display: grid;
     grid-template-columns: var(--grid);
+    grid-row-gap: .5px;  
 }
 
-main > * {
+main > .content,
+main > .services,
+main > .clients,
+main > .team {
     grid-column: 2;
 }
 
-h2::before {
-    border: 1px solid;
+main > .title {
+    grid-column: 1/4;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 
+        minmax(15em, 15%)
+        max-content
+        auto;
+        border-top: .5px solid var(--clr-very-light-2);
+    }
+    
+main > .title > h2 {
+    margin-top: -.5rem;
+    padding-left: 1.1rem;
+    padding-right: 2.4rem;
+    background-color: white;
+    grid-column: 2;
 }
+
+/*h2::before,
+h2::after {
+    display: inline-block;
+    content: "";
+    border-top: 1px solid var(--clr-very-light);
+    width: 100%;
+    margin: 0 1rem;
+    transform: translateY(-.4rem);
+}*/
+
+/* Content */
 
 .content {
     display: grid;
@@ -103,11 +144,14 @@ h2::before {
     line-height: 3.125rem;
     color: var(--clr-light);
     grid-column: span 2;
+    margin-bottom: 0;
+    padding-bottom: 4.375rem;
 }
 
 .content .btn {
     grid-row: 3;
     min-width: 0;
+    margin-bottom: 6.25rem; 
 }
 
 .content .btn--primary {
@@ -121,6 +165,41 @@ h2::before {
     border-radius: 10px;
 }
 
+.services {
+    padding: 6rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5rem;
+}
+
+.services__card {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.services__card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services__card-text > h3 {
+    font-size: 1.75rem;
+    font-weight: var(--fw-normal);
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+.services__card-text > p {
+    font-size: 0.875rem;
+    font-weight: var(--fw-normal);
+    color: var(--clr-very-light-2)
+}
+
+.clients {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
 /* Footer */
 
