@@ -51,6 +51,26 @@ header {
     align-items: center;
 }
 
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo > img {
+    width: 60px;
+    height: 60px;
+}
+
+.header__logo > p {
+    text-transform: lowercase;
+    font-weight: var(--fw-bold);
+    color: var(--clr-dark);
+    font-size: 1.5rem;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
 .menu {
     display: flex;
     font-size: 0.875rem;
@@ -220,6 +240,7 @@ h2::after {
     column-gap: 7.8rem;
     row-gap: 3.75rem;
     margin: 6.25rem 0;
+    margin-left: 1.1rem;
 }
 
 .team__card {
@@ -262,8 +283,24 @@ footer {
     grid-column: 2;
     display: flex;
     justify-content: space-between;
+    padding: 20px 0;
 }
 
+.footer__logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 2rem;
+}
+
+.footer__socials {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer__socials > img {
+    margin-left: 2.5rem;
+}
 
 ul {
     list-style-type: none;
